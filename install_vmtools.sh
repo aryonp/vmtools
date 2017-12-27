@@ -1,0 +1,18 @@
+#!/bin/bash
+clear
+echo "** Update everything and install dependencies"
+{
+  sudo apt update && sudo apt upgrade -y && sudo apt install -y gcc binutils make
+} &> /dev/null
+
+echo "** Preparing ... "
+{
+  sudo mkdir /mnt/cdrom
+  sudo mount /dev/cdrom /mnt/cdrom 
+  ls /mnt/cdrom
+  tar xzvf /mnt/cdrom/VMwareTools-*.tar.gz -C /tmp/
+  cd /tmp/vmware-tools-distrib/
+} &> /dev/null
+
+echo "** Install the VMTools"
+sudo ./vmware-install.pl -d
