@@ -1,9 +1,7 @@
 #!/bin/bash
 clear
-echo "** Update everything and install dependencies"
-{
-  sudo apt update && sudo apt upgrade -y && sudo apt install -y gcc binutils make
-} &> /dev/null
+echo "** Cleanup, update everything and install dependencies"
+sudo apt remove -y open-vm-tools --purge && sudo apt update && sudo apt upgrade -y && sudo apt install -y gcc binutils make &> /dev/null
 
 echo "** Preparing ... "
 {
