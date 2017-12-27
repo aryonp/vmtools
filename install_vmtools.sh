@@ -13,4 +13,4 @@ echo "** Preparing ... "
 } &> /dev/null
 
 echo "** Install the VMTools"
-sudo ./vmware-install.pl -d
+sudo ./vmware-install.pl
